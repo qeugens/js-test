@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style media="screen">
+      .box {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background: white;
+        transition: all 2s;
+      }
+      .red {
+        background: red;
+      }
+      .blue {
+        background: blue;
+        border-radius: 50%;
+      }
+      .black {
+        background: black;
+      }
+      .orange {
+        background: orange;
+      }
+      .pink {
+        background: pink;
+      }
+      .green {
+        background: green;
+        border-radius: 50%;
+      }
+      .purple {
+        background: purple;
+      }
+      .brown {
+        background: brown;
+      }
+      .hidden {
+        opacity: 0;
+      }
+      .grey {
+        background: grey;
+      }
+    </style>
+  <script>
+  $(document).ready(function(){
+   $("div").click(function(){
+    $(".red, .orange").toggleClass("blue");
+  });
+   $(".blue").click(function(){
+    $(".green").css("background-color","black");
+  });
+   $(".black").click(function(){
+		$(this).css({
+			width: function(index, value) {
+				return parseFloat (value) +1300;
+			}
+		});
+	});
+   $(".white").click(function(){
+     $(this).toggleClass("green");
+   });
+   $(".purple").click(function(){
+     $(this).hide();
+   });
+   $(".brown").click (function(){
+     $(this).toggleClass("hidden");
+   });
+   $(".pink").click(function(){
+     $(this).css("background-color","red");
+   });
+   $(".grey").click(function(){
+     $("div").toggleClass("blue");
+   });
+});
+
+  </script>
+
+  </head>
+  <body>
+    <div class="box red"></div>
+    <div class="box blue"></div>
+    <div class="box orange"></div>
+    <div class="box green"></div>
+    <div class="box black"></div>
+    <div class="box purple"></div>
+    <div class="box white"></div>
+    <div class="box pink"></div>
+    <div class="box brown"></div>
+    <div class="box grey"></div>
+  </body>
+</html>
